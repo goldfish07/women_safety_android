@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">WomenSafety</string>
+    <string-array name="safety_tips_splash">
+        <item>Be aware of your surroundings</item>
+        <item>Trust your instincts</item>
+        <item>Stay in well-lit areas</item>
+        <item>Keep your phone charged</item>
+        <item>Share your location when feel unsafe</item>
+        <item>Be careful on social media</item>
+        <item>Carry pepper spray</item>
+        <item>Stay in groups</item>
+        <item>Don\'t leave drinks unattended</item>
+        <item>Trust your support network</item>
+    </string-array>
+    <string-array name="safety_tips">
+        <item>Stay alert and pay attention to the people and things around you, especially in unfamiliar or dimly lit areas.</item>
+        <item>If something feels off, it probably is. Don\'t hesitate to leave a situation that makes you uncomfortable or unsafe.</item>
+        <item>Stick to well-lit streets and pathways when walking alone at night.</item>
+        <item>Make sure your phone is charged and easily accessible in case of an emergency.</item>
+        <item>Let a trusted friend or family member know your plans and share your location with them.</item>
+        <item>Don\'t share personal information or location on social media, and be wary of friend requests or messages from strangers.</item>
+        <item>Consider carrying pepper spray or another form of self-defense tool with you.</item>
+        <item>Whenever possible, walk or travel with a friend or in a group.</item>
+        <item>Never leave your drink unattended, and be wary of accepting drinks from strangers.</item>
+        <item>If you feel unsafe or need help, reach out to a trusted friend or family member, or call emergency services.</item>
+    </string-array>
+</resources>

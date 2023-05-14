@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandableCardView">
+        <attr name="title" format="string"/>
+        <attr name="icon" format="reference"/>
+        <attr name="inner_view" format="reference"/>
+        <attr name="expandOnClick" format="boolean"/>
+        <attr name="setRefreshBtn" format="boolean"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="startExpanded" format="boolean"/>
+    </declare-styleable>
+
+    <dimen name="default_card_height">50dp</dimen>
+    <dimen name="default_vertical_padding">10dp</dimen>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">64dp</dimen>
+
+</resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">facebook.com</domain>
+        <domain includeSubdomains="true">unity3d.com</domain>
+        <domain includeSubdomains="true">applovin.com</domain>
+        <domain includeSubdomains="true">weatherapi.com</domain>
+        <domain includeSubdomains="true">firebase.google.com</domain>
+        <domain includeSubdomains="true">google.com</domain>
+        <domain includeSubdomains="true">api.ipify.com</domain>
+        <domain includeSubdomains="true">flagcdn.com</domain>
+        <domain includeSubdomains="true">openstreetmap.org</domain>
+        <domain includeSubdomains="true">geojs.io</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">speedtest.net</domain>
+
+        <!-- 2Wire --> <!-- Aztech -->
+        <domain includeSubdomains="true">192.168.1.1</domain>
+        <domain includeSubdomains="true">192.168.0.1</domain>
+        <domain includeSubdomains="true">192.168.1.254</domain>
+        <domain includeSubdomains="true">10.0.0.138</domain>
+
+        <!-- 3Com -->
+        <domain includeSubdomains="true">192.168.1.10.1</domain>
+
+        <!-- Asus -->
+        <domain includeSubdomains="true">192.168.2.1</domain>
+        <domain includeSubdomains="true">10.10.1.1</domain>
+
+        <!-- Belkin -->        <!-- Billion -->
+
+        <!-- Buffalo -->
+        <domain includeSubdomains="true">192.168.11.1</domain>
+
+        <!-- D-link -->
+        <domain includeSubdomains="true">192.168.0.10</domain>
+        <domain includeSubdomains="true">192.168.0.101</domain>
+        <domain includeSubdomains="true">192.168.0.30</domain>
+        <domain includeSubdomains="true">192.168.0.50</domain>
+        <domain includeSubdomains="true">192.168.254.254</domain>
+        <domain includeSubdomains="true">10.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.0.2</domain>
+        <domain includeSubdomains="true">10.1.1.1</domain>
+        <domain includeSubdomains="true">10.90.90.90</domain>
+
+        <!-- Eminent -->
+        <domain includeSubdomains="true">192.168.8.1</domain>
+
+        <!-- Hawking -->
+        <domain includeSubdomains="true">192.168.1.200</domain>
+
+        <!-- Huawei -->
+        <domain includeSubdomains="true">192.168.3.1</domain>
+        <domain includeSubdomains="true">192.168.100.1</domain>
+
+        <!--LevelOne-->
+        <domain includeSubdomains="true">192.168.123.254</domain>
+
+
+        <!--Linksys-->
+        <domain includeSubdomains="true">192.168.1.10</domain>
+        <domain includeSubdomains="true">192.168.1.210</domain>
+        <domain includeSubdomains="true">192.168.1.99</domain>
+        <domain includeSubdomains="true">192.168.15.1</domain>
+        <domain includeSubdomains="true">192.168.16.1</domain>
+
+
+        <!-- motorola-->
+        <domain includeSubdomains="true">192.168.10.1</domain>
+        <domain includeSubdomains="true">192.168.20.1</domain>
+        <domain includeSubdomains="true">192.168.30.1</domain>
+        <domain includeSubdomains="true">192.168.62.1</domain>
+        <domain includeSubdomains="true">192.168.102.1</domain>
+
+        <!--apple-->
+        <domain includeSubdomains="true">10.0.1.1</domain>
+
+        <domain includeSubdomains="true">10.1.10.1</domain>
+
+        <domain includeSubdomains="true">192.168.0.3</domain>
+        <domain includeSubdomains="true">192.168.168.168</domain>
+
+        <!--sweex-->
+        <domain includeSubdomains="true">192.168.50.1</domain>
+        <domain includeSubdomains="true">192.168.55.1</domain>
+        <domain includeSubdomains="true">192.168.251.1</domain>
+
+        <domain includeSubdomains="true">192.168.0.254</domain>
+
+        <!-- trendnet-->
+        <domain includeSubdomains="true">192.168.0.100</domain>
+        <domain includeSubdomains="true">192.168.1.100</domain>
+        <domain includeSubdomains="true">192.168.10.100</domain>
+        <domain includeSubdomains="true">192.168.223.100</domain>
+        <domain includeSubdomains="true">200.200.200.5</domain>
+
+        <!-- zoom-->
+        <domain includeSubdomains="true">192.168.4.1</domain>
+
+        <!-- zte-->
+        <domain includeSubdomains="true">192.168.100.100</domain>
+        <domain includeSubdomains="true">192.168.2.254</domain>
+
+        <domain includeSubdomains="true">192.168.31.1</domain>
+
+        <domain includeSubdomains="true">192.168.0.22</domain>
+        <domain includeSubdomains="true">192.168.0.227</domain>
+        <domain includeSubdomains="true">192.168.10.50</domain>
+
+        <domain includeSubdomains="true">192.168.29.1</domain>
+        <domain includeSubdomains="true">0.0.0.0</domain>
+
+        <!--Ubiquiti -->
+        <domain includeSubdomains="true">10.255.128.1</domain>
+
+        <!--Unknown Ssid devices-->
+        <domain includeSubdomains="true">192.168.199.1</domain>
+        <domain includeSubdomains="true">192.168.43.1</domain>
+
+
+    </domain-config>
+</network-security-config>

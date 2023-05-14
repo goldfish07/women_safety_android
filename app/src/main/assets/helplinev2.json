@@ -1,0 +1,76 @@
+{
+  "India Helpline Numbers": [
+    {
+      "Category": "Emergency Services",
+      "Numbers": [
+        {
+          "Service": "Police",
+          "Number": "100"
+        },
+        {
+          "Service": "Fire",
+          "Number": "101"
+        },
+        {
+          "Service": "Ambulance",
+          "Number": "102"
+        },
+        {
+          "Service": "Disaster Management",
+          "Number": "108"
+        },
+        {
+          "Service": "Women Helpline",
+          "Number": "1091"
+        },
+        {
+          "Service": "Child Helpline",
+          "Number": "1098"
+        }
+      ]
+    },
+    {
+      "Category": "COVID-19 Helplines",
+      "Numbers": [
+        {
+          "Service": "National Helpline",
+          "Number": "1075"
+        },
+        {
+          "Service": "State Helpline",
+          "Number": "104"
+        }
+      ]
+    },
+    {
+      "Category": "Senior Citizen Helpline",
+      "Numbers": [
+        {
+          "Service": "Elderline",
+          "Number": "14567"
+        },
+        {
+          "Service": "HelpAge India",
+          "Number": "1800-180-1253"
+        }
+      ]
+    },
+    {
+      "Category": "Suicide Prevention Helpline",
+      "Numbers": [
+        {
+          "Service": "AASRA",
+          "Number": "022-27546669"
+        },
+        {
+          "Service": "Sneha Foundation",
+          "Number": "044-24640050"
+        },
+        {
+          "Service": "Vandrevala Foundation",
+          "Number": "1860-2662-345"
+        }
+      ]
+    }
+  ]
+}
