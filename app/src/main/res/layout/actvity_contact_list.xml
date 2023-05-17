@@ -10,25 +10,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/pink_dark"
+        app:title="Registered Contacts"
         app:titleTextColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contactRecyclerView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_below="@+id/toolbar">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/addAppBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:insetBottom="4dp"
-        android:text="Save Changes"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/pink_dark"
-        app:cornerRadius="0dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/layoutContactNotFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/not_found" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Contact Found!"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                style="@style/TextAppearance.AppCompat.Title"/>
+        </LinearLayout>
+    </FrameLayout>
 </RelativeLayout>

@@ -24,15 +24,14 @@
             android:gravity="center_vertical">
 
             <!-- Rivedi effetto ripple -->
-            <ImageButton
+            <ImageView
                 android:id="@+id/icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_centerVertical="true"
                 android:visibility="gone"
-                android:contentDescription="TODO"
-                android:layout_marginLeft="12dp" />
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/title"
@@ -40,11 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="6dp"
-                android:layout_marginLeft="6dp"
                 android:layout_toStartOf="@id/checkBox"
-                android:layout_toLeftOf="@id/arrow"
                 android:layout_toEndOf="@+id/icon"
-                android:layout_toRightOf="@+id/icon"
                 android:gravity="bottom"
                 android:text="text too long for displaying"
                 android:textColor="@color/black"
@@ -56,9 +52,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_toStartOf="@id/checkBox"
-                android:layout_toLeftOf="@id/checkBox"
                 android:background="?selectableItemBackgroundBorderless"
                 android:contentDescription="TODO"
                 android:src="@drawable/ic_dropmenu"
@@ -74,8 +68,6 @@
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_dropmenu"
                 android:contentDescription="TODO"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
                 app:buttonTint="@color/pink_dark"/>
         </RelativeLayout>
 

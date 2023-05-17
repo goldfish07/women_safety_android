@@ -11,7 +11,6 @@ public class Contact implements Parcelable {
     String name;
     //Ph No. of Contact
     String ph_no;
-    boolean mSelected;
 
     public Contact(String name, String phoneNumber) {
         this.name = name;
@@ -21,7 +20,6 @@ public class Contact implements Parcelable {
     protected Contact(Parcel in) {
         name = in.readString();
         ph_no = in.readString();
-        mSelected = in.readByte() != 0;
     }
 
     public static final Creator<Contact> CREATOR = new Creator<Contact>() {
@@ -64,14 +62,6 @@ public class Contact implements Parcelable {
         this.ph_no = ph_no;
     }
 
-    public boolean isSelected() {
-        return mSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        mSelected = selected;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -81,6 +71,5 @@ public class Contact implements Parcelable {
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(ph_no);
-        dest.writeByte((byte) (mSelected ? 1 : 0));
     }
 }

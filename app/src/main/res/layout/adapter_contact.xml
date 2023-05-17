@@ -10,8 +10,8 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/contact_circle"
-        android:src="@drawable/ic_person"
         android:padding="6dp"
+        android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-medium"
         android:text="0000000000"
@@ -34,18 +33,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="My name"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/adapter_ph_no" />
 
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <ImageView
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:buttonTint="@color/pink_dark"/>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

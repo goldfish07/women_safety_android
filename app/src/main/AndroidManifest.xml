@@ -29,11 +29,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.womensafety.ContactActivity" />
         <activity
             android:name="com.example.womensafety.MainActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.example.womensafety.activity.HelpLineActivity" />
         <activity android:name="com.example.womensafety.activity.PermissionActivity" />
+        <activity android:name="com.example.womensafety.AddContactActivity" />
     </application>
 </manifest>

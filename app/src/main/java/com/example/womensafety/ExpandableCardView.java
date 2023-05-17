@@ -15,6 +15,7 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.Transformation;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ public class ExpandableCardView extends LinearLayout {
     private View innerView;
     private ViewGroup containerView;
     private ImageButton arrowBtn;
-    private ImageButton headerIcon;
+    private ImageView headerIcon;
     private TextView textViewTitle;
 
     private MaterialCheckBox checkBox;

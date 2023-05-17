@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/add_user" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/layoutInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/CardviewRadius"
+                    app:cardElevation="@dimen/CardviewElevation"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="50dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="@dimen/CardviewRadius"
+                            app:cardElevation="@dimen/CardviewElevationEditText"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/ViewPaddingEditText">
+
+                                <EditText
+                                    android:id="@+id/editTxtUserName"
+                                    style="@style/MyTextviewStyle"
+                                    android:layout_width="372dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/transparent"
+                                    android:drawableStart="@drawable/ic_person"
+                                    android:drawablePadding="@dimen/DrawablePadding"
+                                    android:hint="User Name"
+                                    android:padding="@dimen/EditTextPadding"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/whitelight" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="@dimen/CardviewRadius"
+                            app:cardElevation="@dimen/CardviewElevationEditText"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/ViewPaddingEditText">
+
+                                <EditText
+                                    android:id="@+id/editTxtMobileNumber"
+                                    style="@style/MyTextviewStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/transparent"
+                                    android:drawableStart="@drawable/ic_phone"
+                                    android:drawablePadding="@dimen/DrawablePadding"
+                                    android:hint="Mobile Number"
+                                    android:inputType="phone"
+                                    android:maxLength="12"
+                                    android:padding="@dimen/EditTextPadding"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/whitelight" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/pink_dark"
+        app:cardCornerRadius="@dimen/CardviewRadius"
+        app:cardElevation="@dimen/CardviewElevation"
+        app:cardUseCompatPadding="false"
+        app:layout_anchor="@+id/layoutInput"
+        app:layout_anchorGravity="bottom|center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/ViewPaddingEditText">
+
+            <TextView
+                android:id="@+id/txtSaveUser"
+                style="@style/MyTextviewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="@dimen/EditTextPadding"
+                android:text="Save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

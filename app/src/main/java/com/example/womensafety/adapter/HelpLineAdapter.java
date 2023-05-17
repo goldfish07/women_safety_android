@@ -56,7 +56,6 @@ public class HelpLineAdapter extends RecyclerView.Adapter<HelpLineAdapter.ViewHo
         TextView name;
         TextView ph_no;
         ImageView callButton;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             icon = itemView.findViewById(R.id.adapter_helpline_icon);

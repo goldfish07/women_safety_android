@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="CardviewElevation">2dp</dimen>
+    <dimen name="CardviewElevationEditText">1dp</dimen>
+    <dimen name="CardviewRadius">2dp</dimen>
+    <dimen name="DrawablePadding">3dp</dimen>
+    <dimen name="EditTextPadding">8dp</dimen>
+    <dimen name="NoNetImageWH">100dp</dimen>
+    <dimen name="ProjectTextPadding">8dp</dimen>
+    <dimen name="ProjectTextSize">17sp</dimen>
+    <dimen name="ViewPaddingEditText">3dp</dimen>
+</resources>

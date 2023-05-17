@@ -14,7 +14,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,18 +24,16 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.womensafety.activity.HelpLineActivity;
-import com.example.womensafety.adapter.SelectedContactAdapter;
 import com.example.womensafety.db.Database;
 import com.example.womensafety.model.Contact;
 import com.github.mikephil.charting.charts.LineChart;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -45,11 +42,7 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.views.MapView;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView contactRecyclerView;
-    ExtendedFloatingActionButton fabAddContact;
     private Database database;
-    private SelectedContactAdapter selectedContactAdapter = null;
-    LinearLayout emergencyLayout;
     FloatingActionButton fabSOS;
     SharedPreferences preferences;
     ExpandableCardView sendLocationExCardView, smsAlertExCardView;
@@ -65,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_PREF_LOCATION = "location";
     private static final String KEY_PREF_SMS = "sms";
 
+    CardView cardAddContact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         Configuration.getInstance().setUserAgentValue(BuildConfig.APPLICATION_ID);
         preferences = getSharedPreferences("settings", MODE_PRIVATE);
         setSupportActionBar(findViewById(R.id.toolBar));
-        emergencyLayout = findViewById(R.id.emergencyLayout);
-        fabAddContact = findViewById(R.id.addContactEFAB);
         lineChart = findViewById(R.id.lineChart);
         fabSOS = findViewById(R.id.fabSOS);
+
+        cardAddContact = findViewById(R.id.cardAddContact);
         sendLocationExCardView = findViewById(R.id.sendLocationExCardView);
         smsAlertExCardView = findViewById(R.id.smsAlertExCardView);
         inputLayout = findViewById(R.id.inputLayout);
@@ -86,25 +80,25 @@ public class MainActivity extends AppCompatActivity {
         mapView = findViewById(R.id.mapView);
         errorMapViewLayout = findViewById(R.id.errorMapViewLayout);
 
-        fabAddContact.shrink();
         TextView todaysTipTxt = findViewById(R.id.todaysShortTipTxt);
-        contactRecyclerView = findViewById(R.id.contactRecyclerView);
 
         String[] safety_tips = getResources().getStringArray(R.array.safety_tips);
         todaysTipTxt.setText(safety_tips[0]);
 
+        cardAddContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AddContactActivity.class));
+            }
+        });
+        findViewById(R.id.cardShowRegisteredContact).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ShowRegisteredContact().show(getSupportFragmentManager(), "");
+            }
+        });
         fabSOS.setOnClickListener(clickListener);
         database = new Database(this);
-        selectedContactAdapter = new SelectedContactAdapter(this, database.getSelectedAppList(), () -> {
-
-        });
-        contactRecyclerView.setAdapter(selectedContactAdapter);
-        if (!database.getSelectedAppList().isEmpty()) {
-            emergencyLayout.setVisibility(View.GONE);
-        }
-        fabAddContact.setOnClickListener(v -> startActivityForResult(new Intent(MainActivity.this, ContactActivity.class), 1001));
-        new Handler().postDelayed(() -> fabAddContact.extend(), 1500);
-
         sendLocationExCardView.setChecked(preferences.getBoolean(KEY_PREF_LOCATION, false));
         sendLocationExCardView.setOnCheckChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -176,11 +170,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        contactRecyclerView.setAdapter(new SelectedContactAdapter(this, database.getSelectedAppList(), () -> {
-        }));
-        selectedContactAdapter.update(database.getSelectedAppList());
-        if (!database.getSelectedAppList().isEmpty())
-            emergencyLayout.setVisibility(View.GONE);
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -230,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendSMS(String message) {
-        for (Contact contact : database.getSelectedAppList()) {
+        for (Contact contact : database.getContactList()) {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(contact.getPh_no(), null, message, null, null);
         }
