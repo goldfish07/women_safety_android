@@ -7,6 +7,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Base64;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 public class HelpLine {
     String name;
     String number;
@@ -37,6 +40,7 @@ public class HelpLine {
     /**
      * @return bitmap (from given string)
      */
+    @Nullable
     public static Bitmap stringToBitmap(String encodedString) {
         try {
             byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
@@ -47,7 +51,8 @@ public class HelpLine {
         }
     }
 
-    public static Drawable bitmapToDrawable(Context context, Bitmap bitmap) {
+    @NonNull
+    public static Drawable bitmapToDrawable(@NonNull Context context, Bitmap bitmap) {
         return new BitmapDrawable(context.getResources(), bitmap);
     }
 

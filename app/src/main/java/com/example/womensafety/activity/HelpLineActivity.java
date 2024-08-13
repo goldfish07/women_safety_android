@@ -2,6 +2,7 @@ package com.example.womensafety.activity;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.womensafety.MainActivity;
@@ -28,6 +29,7 @@ public class HelpLineActivity extends MainActivity {
         recyclerView.setAdapter(new HelpLineAdapter(this, loadHelpLinesFromJSON()));
     }
 
+    @NonNull
     private ArrayList<HelpLine> loadHelpLinesFromJSON() {
         ArrayList<HelpLine> helpLines = new ArrayList<>();
 

@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
@@ -83,14 +84,14 @@ public class ExpandableCardView extends LinearLayout {
         initView(context);
     }
 
-    private void initView(Context context) {
+    private void initView(@NonNull Context context) {
         //Inflating View
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_expandable_cardview, this);
     }
 
-    private void initAttributes(Context context, AttributeSet attrs) {
+    private void initAttributes(@NonNull Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableCardView);
         title = typedArray.getString(R.styleable.ExpandableCardView_title);
         iconDrawable = typedArray.getDrawable(R.styleable.ExpandableCardView_icon);
@@ -307,6 +308,7 @@ public class ExpandableCardView extends LinearLayout {
         this.animDuration = animDuration;
     }
 
+    @NonNull
     public static RotateAnimation getRotateAni() {
         RotateAnimation animation = new RotateAnimation(0.0f, 360.0f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,

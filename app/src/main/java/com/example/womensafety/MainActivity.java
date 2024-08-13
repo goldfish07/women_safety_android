@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,18 +86,8 @@ public class MainActivity extends AppCompatActivity {
         String[] safety_tips = getResources().getStringArray(R.array.safety_tips);
         todaysTipTxt.setText(safety_tips[0]);
 
-        cardAddContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AddContactActivity.class));
-            }
-        });
-        findViewById(R.id.cardShowRegisteredContact).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new ShowRegisteredContact().show(getSupportFragmentManager(), "");
-            }
-        });
+        cardAddContact.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddContactActivity.class)));
+        findViewById(R.id.cardShowRegisteredContact).setOnClickListener(v -> new ShowRegisteredContact().show(getSupportFragmentManager(), ""));
         fabSOS.setOnClickListener(clickListener);
         database = new Database(this);
         sendLocationExCardView.setChecked(preferences.getBoolean(KEY_PREF_LOCATION, false));
@@ -136,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         setLocationToMap();
     }
 
-    private void removeMapsLink(TextInputEditText editText) {
+    private void removeMapsLink(@NonNull TextInputEditText editText) {
         String currentText = editText.getText().toString();
         String newText = currentText.replaceAll("https://www.google.com/maps/search/\\?api=1&query=\\S+", "");
         editText.setText(newText);
@@ -172,12 +163,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (v.getId() == R.id.fabSOS) {
-                sendSOS();
-            }
+    View.OnClickListener clickListener = v -> {
+        if (v.getId() == R.id.fabSOS) {
+            sendSOS();
         }
     };
 

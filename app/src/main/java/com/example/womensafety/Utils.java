@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 
+import androidx.annotation.NonNull;
+
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -44,7 +46,7 @@ public  class Utils {
             mapView.getOverlays().add(startMarker);
         }
     }
-    public static boolean isWhatsAppInstalled(Context context) {
+    public static boolean isWhatsAppInstalled(@NonNull Context context) {
         PackageManager packageManager = context.getPackageManager();
         try {
             // Check if the WhatsApp package is installed
@@ -57,7 +59,7 @@ public  class Utils {
         }
     }
 
-    public static void setDataToLineChart(Context context, LineChart lineChart) {
+    public static void setDataToLineChart(@NonNull Context context, @NonNull LineChart lineChart) {
         // Create some dummy data for the chart
         List<Entry> entries = new ArrayList<>();
         entries.add(new Entry(1, 10)); // Week 1
@@ -116,6 +118,7 @@ public  class Utils {
         lineChart.invalidate();
     }
 
+    @NonNull
     public static LineDataSet createSet(int color, String label) {
         LineDataSet set = new LineDataSet(null, label);
         set.setAxisDependency(YAxis.AxisDependency.RIGHT);

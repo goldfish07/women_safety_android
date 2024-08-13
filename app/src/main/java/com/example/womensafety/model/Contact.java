@@ -17,17 +17,19 @@ public class Contact implements Parcelable {
         this.ph_no = phoneNumber;
     }
 
-    protected Contact(Parcel in) {
+    protected Contact(@NonNull Parcel in) {
         name = in.readString();
         ph_no = in.readString();
     }
 
     public static final Creator<Contact> CREATOR = new Creator<Contact>() {
+        @NonNull
         @Override
         public Contact createFromParcel(Parcel in) {
             return new Contact(in);
         }
 
+        @NonNull
         @Override
         public Contact[] newArray(int size) {
             return new Contact[size];

@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
 /**
@@ -113,7 +115,7 @@ public class RippleBackground extends RelativeLayout {
         }
 
         @Override
-        protected void onDraw(Canvas canvas) {
+        protected void onDraw(@NonNull Canvas canvas) {
             int radius = (Math.min(getWidth(), getHeight())) / 2;
             canvas.drawCircle(radius, radius, radius - rippleStrokeWidth, paint);
         }

@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import androidx.annotation.NonNull;
+
 import com.example.womensafety.model.Contact;
 
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(@NonNull SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_CONTACT + "("
                 + KEY_ID + " integer primary key, "
                 + KEY_NAME + " text, "
@@ -37,7 +39,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(@NonNull SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists " + TABLE_CONTACT);
         onCreate(db);
     }
@@ -59,7 +61,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
 
-    public void saveContact(Contact contact) {
+    public void saveContact(@NonNull Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_NAME, contact.getName());
@@ -75,20 +77,21 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public void delAppList(Contact appInfo) {
+    public void delAppList(@NonNull Contact appInfo) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CONTACT, KEY_PH_NUMBER + " = ?", new String[]{appInfo.getPh_no()});
         db.close();
     }
 
-    public void delSelectedAppList(Contact appInfo) {
+    public void delSelectedAppList(@NonNull Contact appInfo) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CONTACT, KEY_PH_NUMBER + " = ?", new String[]{appInfo.getPh_no()});
         db.close();
     }
 
+    @NonNull
     @SuppressLint("Range")
-    private Contact parseServer(Cursor cursor) {
+    private Contact parseServer(@NonNull Cursor cursor) {
         return new Contact(
                 cursor.getString(cursor.getColumnIndex(KEY_NAME)),
                 cursor.getString(cursor.getColumnIndex(KEY_PH_NUMBER))

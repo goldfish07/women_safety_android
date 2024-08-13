@@ -46,7 +46,7 @@ public class PermissionActivity extends AppCompatActivity {
 
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(@NonNull View v) {
             if (v.getId() == R.id.locationPermissionBtn) {
                 ActivityCompat.requestPermissions(PermissionActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_LOCATION);
             } else if (v.getId() == R.id.contactPermissionBtn) {
